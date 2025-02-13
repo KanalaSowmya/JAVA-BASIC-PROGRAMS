@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class PrimeCompositeCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        scanner.close();
+
+        if (num <= 1) {
+            System.out.println(num + " is neither prime nor composite.");
+        } else if (isPrime(num)) {
+            System.out.println(num + " is a Prime number.");
+        } else {
+            System.out.println(num + " is a Composite number.");
+        }
+    }
+    public static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+}
